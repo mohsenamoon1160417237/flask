@@ -1,5 +1,5 @@
 import psutil
-from models.MemoryMdl import MemoryMdl
+from models.memory_mdl import MemoryMdl
 
 
 class MemoryMan:
@@ -7,17 +7,15 @@ class MemoryMan:
     def __init__(self):
         pass
 
-    def __getRamInf(self):
+    @staticmethod
+    def __get_ram_inf():
         total = psutil.virtual_memory().total / 1000000
         used = psutil.virtual_memory().used / 1000000
         free = psutil.virtual_memory().free / 1000000
         print(f"Saved memory data with free: {free}, used: {used}, total: {total}")
-        print('save_memory_data got data')
         return total, used, free
 
-    def saveRamToDb(self):
-        total, used, free = self.__getRamInf()
+    def save_ram_to_db(self):
+        total, used, free = self.__get_ram_inf()
         memory_data = MemoryMdl(total=total, free=free, used=used)
-        print('memory_data')
-        print(memory_data)
-        memory_data.saveToDb()
+        memory_data.save_to_db()

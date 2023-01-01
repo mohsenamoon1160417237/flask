@@ -1,19 +1,12 @@
-import psutil
 from celery.utils.log import get_task_logger
-from flask_sqlalchemy import SQLAlchemy
 
-from main_app import celery, flask_app
-from managements.MemoryMan import MemoryMan
+from main_app import celery
+from managements.memory_man import MemoryMan
 
 logger = get_task_logger(__name__)
 
 
 @celery.task()
 def save_memory_data():
-    print('save_memory_data start')
-
-    ramMan = MemoryMan()
-
-    ramMan.saveRamToDb()
-
-
+    ram_man = MemoryMan()
+    ram_man.save_ram_to_db()

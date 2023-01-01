@@ -1,5 +1,5 @@
 from main_app import flask_app
-from models.MemoryMdl import MemoryMdl
+from models.memory_mdl import MemoryMdl
 
 with flask_app.app_context():
-    MemoryMdl.makeTbl()
+    MemoryMdl.make_tbl()
