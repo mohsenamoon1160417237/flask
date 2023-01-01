@@ -1,6 +1,6 @@
 from sqlalchemy import desc
 
-from managements.dbs_man import DbsMan
+from managements.DbsMan import DbsMan
 
 _db_memory = DbsMan.get_db_memory()
 

@@ -1,7 +1,7 @@
 import json
 
-from models.memory_mdl import MemoryMdl
-from pattern.memory_encoder import MemoryEncoder
+from models.MemoryMdl import MemoryMdl
+from patterns.MemoryEncoder import MemoryEncoder
 
 
 class MemoryCtrl:

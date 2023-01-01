@@ -1,7 +1,7 @@
 from celery.utils.log import get_task_logger
 
 from main_app import celery
-from managements.memory_man import MemoryMan
+from managements.MemoryMan import MemoryMan
 
 logger = get_task_logger(__name__)
 

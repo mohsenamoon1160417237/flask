@@ -1,5 +1,5 @@
 from flask import request
-from controllers.memory_ctrl import MemoryCtrl
+from controllers.MemoryCtrl import MemoryCtrl
 from flask import Blueprint
 
 api_memory = Blueprint('memory_api', __name__)

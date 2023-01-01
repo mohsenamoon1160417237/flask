@@ -1,5 +1,5 @@
 import psutil
-from models.memory_mdl import MemoryMdl
+from models.MemoryMdl import MemoryMdl
 
 
 class MemoryMan:
