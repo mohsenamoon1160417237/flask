@@ -1,21 +1,6 @@
 import json
 
 from sqlalchemy.ext.declarative import DeclarativeMeta
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
-
-# Factory pattern
-def make_app() -> Flask:
-    flask_app = Flask(__name__)
-    flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///memory.sqlite3'
-    flask_app.config.from_object('config')
-    return flask_app
-
-
-def make_db(app: Flask) -> SQLAlchemy:
-    db = SQLAlchemy(app)
-    return db
 
 
 class AlchemyEncoder(json.JSONEncoder):
