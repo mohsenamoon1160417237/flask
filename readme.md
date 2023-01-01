@@ -14,6 +14,7 @@ Run the redis server
 
 ***
 Run celery beat in a new terminal
+
     celery -A main_app.celery beat -l info
 
 ***
