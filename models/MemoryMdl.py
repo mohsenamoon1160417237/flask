@@ -27,6 +27,6 @@ class MemoryMdl(DbsMan.dbMemory.Model,DbsMan):  # remind: wrong extend to db.Mod
         return memory_datas
 
     def saveToDb(self):
-        self.__db.session.add(self)  # todo self?
-        self.__db.session.commit()
+        self.__myDb__.session.add(self)  # todo self?
+        self.__myDb__.session.commit()
 
