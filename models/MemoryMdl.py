@@ -3,8 +3,9 @@ from managements.DbsMan import DbsMan
 DbsMan.readyDbMemory()
 
 
-class MemoryMdl(DbsMan.dbMemory.Model):  # remind: wrong extend to db.Model
+class MemoryMdl(DbsMan.dbMemory.Model,DbsMan):  # remind: wrong extend to db.Model
     __tablename__ = "memory_data"
+    __myDb__ = DbsMan.dbMemory
 
     serialize_only = ('id', 'total', 'free', 'used',)
 
