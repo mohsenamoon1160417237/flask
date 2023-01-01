@@ -1,6 +1,6 @@
 from celery.schedules import crontab
 
-imports = ('memory_data.tasks')
+imports = ('main_app.tasks')
 result_expires = 30
 timezone = 'UTC'
 
@@ -10,7 +10,7 @@ result_serializer = 'json'
 
 beat_schedule = {
     'save-memory-data': {
-        'task': 'memory_data.tasks.save_memory_data',
+        'task': 'main_app.tasks.save_memory_data',
         # Every minute
         'schedule': crontab(minute="*"),
     }

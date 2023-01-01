@@ -1,16 +1,15 @@
 import psutil
 
-from memory_data.tasks import logger
-from utility.db.MemoryData import MemoryData
+from main_app.tasks import logger
+from models.MemoryMdl import MemoryMdl
 
 
-class RamManagement:
+class MemoryMan:
 
+    def __init__(self):
+        pass
 
-    def __init__(self,db):
-        self.db = db
-
-    def getRamInf(self):
+    def __getRamInf(self):
         total = psutil.virtual_memory().total / 1000000
         used = psutil.virtual_memory().used / 1000000
         free = psutil.virtual_memory().free / 1000000
@@ -19,8 +18,8 @@ class RamManagement:
         return total,used,free
 
     def saveRamToDb(self):
-        total,used,free = self.getRamInf()
-        memory_data = MemoryData(db=self.db, total=total, free=free, used=used)
+        total,used,free = self.__getRamInf()
+        memory_data = MemoryMdl(total=total, free=free, used=used)
         print('memory_data')
         print(memory_data)
         memory_data.saveToDb()
