@@ -26,7 +26,16 @@ class MemoryMdl(_db_memory.Model, DbsMan):
             memory_datas = self.query.order_by(desc(MemoryMdl.id)).limit(num).all()
         else:
             memory_datas = self.query.all()
-        return memory_datas
+
+        records = []
+        for e_mem in memory_datas:
+            fields = {}
+            for field in list(self.serialize_only):
+                fields[field] = e_mem.__getattribute__(field)
+            records.append(fields)
+
+        return records
+
 
     def save_to_db(self):
         self.my_db.session.add(self)

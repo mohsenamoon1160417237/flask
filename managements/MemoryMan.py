@@ -12,7 +12,7 @@ class MemoryMan:
         total = psutil.virtual_memory().total / 1000000
         used = psutil.virtual_memory().used / 1000000
         free = psutil.virtual_memory().free / 1000000
-        print(f"Saved memory data with free: {free}, used: {used}, total: {total}")
+
         return total, used, free
 
     def save_ram_to_db(self):
