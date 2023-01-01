@@ -1,7 +1,9 @@
 ### Memory Management
 
+
 #### Python Interpreter version: 
 Python 3.9
+
 
 ##### To activate virtual environment:
 
