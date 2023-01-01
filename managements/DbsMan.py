@@ -6,14 +6,15 @@ from main_app import flask_app
 class DbsMan:
 
     dbMemory = None
-    __myDb__ = None
+    myDb = None
 
     @staticmethod
-    def readyDbMemory():
+    def getDbMemory():
         if not DbsMan.dbMemory:
             DbsMan.dbMemory = SQLAlchemy(flask_app)
+        return DbsMan.dbMemory
 
 
     @classmethod
     def makeTbl(cls):
-        cls.__myDb__.create_all()
+        cls.myDb.create_all()
