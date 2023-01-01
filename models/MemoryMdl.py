@@ -20,7 +20,7 @@ class MemoryMdl(_dbMemory.Model,DbsMan):  # remind: wrong extend to db.Model
         self.used = used
 
     def get_data(self,num=0):
-        memory_datas = self.__dbMdl.query.all()  # todo chk query by num
+        memory_datas = self.myDb.query.all()  # todo chk query by num
         if num:
             memory_datas = memory_datas[::-1][:num]
 
