@@ -5,7 +5,7 @@ from managements.DbsMan import DbsMan
 _db_memory = DbsMan.get_db_memory()
 
 
-class MemoryMdl(_db_memory.Model, DbsMan):  # remind: wrong extend to db.Model
+class MemoryMdl(_db_memory.Model, DbsMan):
     __tablename__ = "memory_data"
     my_db = _db_memory
 
@@ -29,5 +29,5 @@ class MemoryMdl(_db_memory.Model, DbsMan):  # remind: wrong extend to db.Model
         return memory_datas
 
     def save_to_db(self):
-        self.my_db.session.add(self)  # todo self?
+        self.my_db.session.add(self)
         self.my_db.session.commit()

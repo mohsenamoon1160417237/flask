@@ -6,8 +6,7 @@ from patterns.MemoryEncoder import MemoryEncoder
 
 class MemoryCtrl:
 
-    @classmethod
-    def get_ram_info(cls, num):
+    def get_ram_info(self,num):
         mem_mdl = MemoryMdl()
         memory_datas = mem_mdl.get_data(num)
         return json.dumps(memory_datas, cls=MemoryEncoder)
