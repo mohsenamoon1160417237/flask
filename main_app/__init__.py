@@ -1,7 +1,7 @@
-from flask import request, Flask
+from flask import Flask
 from celery import Celery
 
-import celeryconfig
+# import celeryconfig
 
 flask_app = Flask(__name__)
 flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///memory.sqlite3'
